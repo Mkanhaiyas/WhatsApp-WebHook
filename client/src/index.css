@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --wa-green: #00a884;
+  --wa-light: #d9fdd3;
+  --wa-chat-bg: #efeae2;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply text-[15px] bg-[#F0F2F5];
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.chat-bg {
+  background-color: var(--wa-chat-bg);
+  background-size: 512px 512px;
+}
+
+.bubble {
+  @apply rounded-lg px-3 py-2 max-w-[75%] relative box-content;
+}
+.bubble.me {
+  background: var(--wa-light);
+}
+.bubble.them {
+  @apply bg-white;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #c8c8c8;
+  border-radius: 999px;
+}
