@@ -40,22 +40,36 @@ This project processes **WhatsApp webhook payloads (messages & statuses)**, stor
 ## 📂 Project Structure
 
 ```
-├── client/                # Frontend (React + Vite + Tailwind)
+├── client/                     # Frontend (React + Vite + Tailwind)
+│   ├── .gitignore
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public/
+│   │   └── vite.svg
 │   ├── src/
-│   │   ├── components/    # Sidebar, ChatHeader, MessageList, MessageInput, etc.
-│   │   ├── lib/           # API helpers
-│   │   └── App.jsx        # Main UI layout
-│   └── public/            # Static assets (icons, ticks)
+│   │   ├── App.jsx
+│   │   ├── components/         # UI components (Sidebar, ChatHeader, MessageList, etc.)
+│   │   ├── index.css
+│   │   ├── lib/                # API helpers
+│   │   └── main.jsx
+│   └── vite.config.js
 │
-├── server/                # Backend (Node.js + Express)
-│   ├── models/            # Mongoose models (users, messages)
-│   ├── routes/            # API endpoints
-│   ├── tools/
-│   │   └── importer/      # Script to import sample WhatsApp payloads
-│   ├── src/payLoadDir/    # Sample WhatsApp webhook payloads (JSON)
-│   └── index.js           # Entry point
-│
-├── .gitignore             # Git ignored files
+└── server/                     # Backend (Node.js + Express + MongoDB)
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    └── src/
+        ├── config/             # Environment configs
+        ├── db/                 # Database connection
+        ├── index.js            # Server entry point
+        ├── models/             # User & Message models
+        ├── payLoadDir/         # Sample WhatsApp webhook payloads (JSON)
+        ├── routes/             # REST API routes
+        ├── sockets/            # Socket.IO for real-time updates
+        └── utils/              # Utility functions (status mapping)
 ├── README.md              # Project documentation
 ```
 
@@ -142,3 +156,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 ## 📜 License
 
 MIT License © 2025
+
